@@ -48,7 +48,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-rvm'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tangledhelix/vim-octopress'
-Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 " Libraries
 Bundle 'tpope/vim-repeat'
 Bundle 'L9'
@@ -110,6 +110,7 @@ set directory=/tmp/alexvim/swap
 " ---------------
 set modelines=5
 set ruler " show the cursor position all the time
+set nu
 set wrap " wrap long text when displaying
 set laststatus=2
 "set cmdheight=2
@@ -128,6 +129,7 @@ set cf
 set history=100
 set showcmd " display incomplete commands
 set autowrite " Writes on make/shell commands
+set wildignore+=*.o,*.obj,.git
 "set timeoutlen=250 " Time to wait for a command (after leader for example)
 
 " ---------------
@@ -239,7 +241,7 @@ autocmd filetype c,cpp abbreviate #i #include
 autocmd filetype c,cpp abbreviate #d #define
 autocmd filetype c,cpp abbreviate #e #endif
 "autocmd filetype c,cpp set list | set listchars=tab:»·,trail:·
-autocmd filetype c,cpp,java inoremap { {}:let leavechar="}"i<Up>	
+autocmd filetype c,cpp,java inoremap { {}:let leavechar="}"i<Up>
 autocmd filetype ruby setlocal shiftwidth=2
 autocmd filetype help setlocal nonu
 autocmd filetype html setlocal shiftwidth=2
@@ -283,7 +285,7 @@ endif
 " Only define it when not defined already.
 if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+      \ | wincmd p | diffthis
 endif
 
 " ----------------------------------------
