@@ -24,6 +24,7 @@ Bundle 'wincent/Command-T'
 Bundle 'taglist.vim'
 Bundle 'cscope_macros.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'fholgado/minibufexpl.vim'
 " UI Additions
 Bundle 'dickeytk/status.vim'
 " Commands
@@ -48,6 +49,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-rvm'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tangledhelix/vim-octopress'
+Bundle 'tpope/vim-rails'
 "Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 " Libraries
 Bundle 'tpope/vim-repeat'
@@ -390,7 +392,7 @@ nnoremap <leader>fm :FufMruFile<CR>
 " ---------------
 " Session
 " ---------------
-let g:session_autosave=0
+let g:session_autosave=1
 let g:session_autoload=0
 nnoremap <leader>os :OpenSession<CR>
 
