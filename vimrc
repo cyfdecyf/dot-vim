@@ -228,6 +228,8 @@ vmap Q gq
 " In case forget to use sudo vim
 cmap w!! w !sudo tee % >/dev/null
 
+nnoremap <leader>bd <Plug>Kwbd
+
 " ctrl + k to move over the last pair
 "inoremap ( ():let leavechar=")"i
 "inoremap [ []:let leavechar="]"i
