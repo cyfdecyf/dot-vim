@@ -81,6 +81,8 @@ elseif has('gui_running')
     set guifont=Monaco:h12
     " e: tab page, g: gray menu, m: menu bar, t: tearoff menu items
     set guioptions=egmt
+    " commands like yy will directly put content into mac clipboard
+    set clipboard=unnamed
   endif
   winsize 90 45
 endif
@@ -132,6 +134,7 @@ set history=100
 set showcmd " display incomplete commands
 set autowrite " Writes on make/shell commands
 set wildignore+=*.o,*.obj,.git
+set scrolloff=5 " Always keep 5 lines above/below the cursor
 "set timeoutlen=250 " Time to wait for a command (after leader for example)
 
 " ---------------
@@ -182,7 +185,7 @@ set complete=.,w,b,u,U
 " Bindings
 " ----------------------------------------
 
-let mapleader = ","
+let mapleader=","
 
 " Window Movement
 nmap <silent> <C-h> :wincmd h<CR>
@@ -204,17 +207,26 @@ imap <C-l> <C-x><C-l>
 map <F5> :make
 map <F7> :cnext
 map  :w
-nmap ' `
 
-nmap <silent> <leader>s :set spell!<CR>
+nmap ' ` " Jump to the exact location of the mark
+nnoremap ; :
+nnoremap j gj
+nnoremap k gk
+
+nmap <silent> <leader>s :setlocal spell!<CR> " Switch on spell
 nmap <silent> <leader>v :e ~/.vimrc<CR>
+set pastetoggle=<leader>p
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
 " Don't use Ex mode, use Q for formatting
-map Q gq
+nmap Q gqap
+vmap Q gq
+
+" In case forget to use sudo vim
+cmap w!! w !sudo tee % >/dev/null
 
 " ctrl + k to move over the last pair
 "inoremap ( ():let leavechar=")"i
@@ -252,6 +264,7 @@ autocmd filetype tex setlocal ts=4 | setlocal sw=4 | setlocal softtabstop=4 | se
 autocmd filetype lua setlocal ts=2 | setlocal sw=2 | setlocal softtabstop=2 | setlocal expandtab
 autocmd filetype sh setlocal ts=4 | setlocal sw=4 | setlocal softtabstop=4 | setlocal expandtab
 autocmd filetype srt setlocal ts=4 | setlocal sw=4 | setlocal softtabstop=4 | setlocal expandtab
+autocmd filetype vim setlocal ts=2 | setlocal sw=2 | setlocal expandtab
 
 " ----------------------------------------
 " Misc.
@@ -334,22 +347,22 @@ let NERDShutUp = 1
 " use ghc functionality for haskell files
 autocmd filetype haskell set ts=4
 au Bufenter *.hs compiler ghc
-let g:haskell_indent_if = 4
+let g:haskell_indent_if=4
 
 " -----------------
 " ZenCoding
 " -----------------
-let g:use_zen_complete_tag = 1
-let g:user_zen_expandabbr_key = '<c-j>'
+let g:use_zen_complete_tag=1
+let g:user_zen_expandabbr_key='<c-j>'
 
 " -----------------
 " taglist
 " -----------------
 nnoremap <silent> <F4> :TlistToggle<CR>
-let g:Tlist_Show_One_File = 1
-let g:Tlist_Use_Right_Window = 1
-let g:Tlist_Exit_OnlyWindow = 1
-let g:Tlist_Inc_Winwidth = 1
+let g:Tlist_Show_One_File=1
+let g:Tlist_Use_Right_Window=1
+let g:Tlist_Exit_OnlyWindow=1
+let g:Tlist_Inc_Winwidth=1
 
 " -----------------
 " status
