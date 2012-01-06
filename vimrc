@@ -438,7 +438,6 @@ let g:syntastic_mode_map={ 'mode': 'passive',
 
 let g:EasyMotion_mapping_f='f'
 let g:EasyMotion_mapping_F='F'
-let g:EasyMotion_leader_key='<Leader>'
 
 set exrc
 set secure
