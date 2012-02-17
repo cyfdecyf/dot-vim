@@ -8,6 +8,7 @@ filetype off     " required!
 
 let g:vundle_default_git_proto='git'
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/go/
 call vundle#rc()
 
 " let Vundle manage Vundle. required! 
@@ -106,8 +107,8 @@ set fileencodings=utf-8,gbk "ucs-bom,ucs-4
 " Backups
 " ---------------
 set backup
-set backupdir=/tmp/alexvim/backup
-set directory=/tmp/alexvim/swap
+set backupdir=~/.vim/data/backup
+set directory=~/.vim/data/swap
 
 " ---------------
 " UI
@@ -257,7 +258,7 @@ autocmd filetype c,cpp abbreviate #i #include
 autocmd filetype c,cpp abbreviate #d #define
 autocmd filetype c,cpp abbreviate #e #endif
 "autocmd filetype c,cpp set list | set listchars=tab:»·,trail:·
-autocmd filetype c,cpp,java inoremap { {}:let leavechar="}"i<Up>
+autocmd filetype c,cpp,java,go inoremap { {}<Up>o
 autocmd filetype ruby setlocal shiftwidth=2
 autocmd filetype help setlocal nonu
 autocmd filetype html setlocal shiftwidth=2
@@ -267,6 +268,9 @@ autocmd filetype lua setlocal ts=2 | setlocal sw=2 | setlocal softtabstop=2 | se
 autocmd filetype sh setlocal ts=4 | setlocal sw=4 | setlocal softtabstop=4 | setlocal expandtab
 autocmd filetype srt setlocal ts=4 | setlocal sw=4 | setlocal softtabstop=4 | setlocal expandtab
 autocmd filetype vim setlocal ts=2 | setlocal sw=2 | setlocal expandtab
+autocmd filetype markdown setlocal ts=2 | setlocal sw=2 | setlocal expandtab
+autocmd filetype go setlocal ts=4 | setlocal sw=4 | setlocal noexpandtab
+autocmd filetype go setlocal makeprg=gomake
 
 " ----------------------------------------
 " Misc.
