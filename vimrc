@@ -51,6 +51,7 @@ Bundle 'tpope/vim-rvm'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tangledhelix/vim-octopress'
 Bundle 'tpope/vim-rails'
+Bundle 'kchmck/vim-coffee-script'
 "Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 " Libraries
 Bundle 'tpope/vim-repeat'
