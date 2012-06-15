@@ -52,7 +52,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tangledhelix/vim-octopress'
 Bundle 'tpope/vim-rails'
 Bundle 'kchmck/vim-coffee-script'
-"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 " Libraries
 Bundle 'tpope/vim-repeat'
 Bundle 'L9'
@@ -84,7 +84,7 @@ elseif has('gui_running')
     " e: tab page, g: gray menu, m: menu bar, t: tearoff menu items
     set guioptions=egmt
     " commands like yy will directly put content into mac clipboard
-    set clipboard=unnamed
+    "set clipboard=unnamed
   endif
   winsize 90 45
 endif
@@ -188,6 +188,7 @@ set complete=.,w,b,u,U
 " ----------------------------------------
 
 let mapleader=","
+inoremap // <Esc>
 
 " Window Movement
 nmap <silent> <C-h> :wincmd h<CR>
@@ -199,9 +200,6 @@ nmap <silent> <C-l> :wincmd l<CR>
 command W w
 command Q q
 abbreviate teh the
-
-map <F1> <Esc>
-imap <F1> <Esc>
 
 " Make line completion easier
 imap <C-l> <C-x><C-l>
@@ -403,7 +401,7 @@ let g:statusline_order=[
 " FuzzyFinder
 " -----------------
 let g:fuf_modesDisable=['mrucmd'] " Enables FufMruFile
-nnoremap <C-s> :FufBuffer<CR>
+"nnoremap <C-s> :FufBuffer<CR>
 nnoremap <silent>s<C-s> :FufFileWithCurrentBufferDir<CR>
 nnoremap <silent><C-y> :FufMruFile<CR>
 nnoremap <Leader>ff :FufFile<CR>
