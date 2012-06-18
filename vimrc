@@ -188,7 +188,6 @@ set complete=.,w,b,u,U
 " ----------------------------------------
 
 let mapleader=","
-inoremap ;; <Esc>
 
 " Window Movement
 nmap <silent> <C-h> :wincmd h<CR>
