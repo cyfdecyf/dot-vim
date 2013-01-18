@@ -21,11 +21,10 @@ Bundle 'gmarik/vundle'
 " Navigation
 Bundle 'FuzzyFinder'
 Bundle 'a.vim'
-Bundle 'wincent/Command-T'
+Bundle 'kien/ctrlp.vim'
 Bundle 'taglist.vim'
 Bundle 'cscope_macros.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'fholgado/minibufexpl.vim'
 " UI Additions
 Bundle 'dickeytk/status.vim'
 " Commands
@@ -68,7 +67,7 @@ filetype plugin indent on
 if has('win32') || has('win64')
   " Windows
   source $VIMRUNTIME/mswin.vim
-  set guifont=Consolas:h10:cANSI
+  set guifont=Consolas:h11:cANSI
   set guioptions-=T " Toolbar
   set guioptions-=m " Menubar
 
@@ -80,7 +79,7 @@ if has('win32') || has('win64')
   cd ~
 elseif has('gui_running')
   if has("gui_macvim")
-    set guifont=Monaco:h12
+    set guifont=Monaco:h14
     " e: tab page, g: gray menu, m: menu bar, t: tearoff menu items
     set guioptions=egmt
     " commands like yy will directly put content into mac clipboard
@@ -312,6 +311,13 @@ endif
 " ----------------------------------------
 
 " ---------------
+" ctrl.p
+" ---------------
+
+nnoremap <silent> <Leader>f :CtrlPCurWD<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+
+" ---------------
 " SuperTab
 " ---------------
 " Set these up for cross-buffer completion (something Neocachecompl has a hard
@@ -424,7 +430,7 @@ nmap <Leader>bc :BundleClean<CR>
 " ---------------
 " Kwbd
 " ---------------
-nnoremap <Leader>bd :Kwbd<CR>
+nnoremap <Leader>d :Kwbd<CR>
 
 " ---------------
 " Syntastic
