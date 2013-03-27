@@ -29,14 +29,16 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'dickeytk/status.vim'
 " Commands
 Bundle 'tpope/vim-surround'
-Bundle 'mileszs/ack.vim'
+"Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim.git'
+"Bundle 'vim-scripts/grep.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdcommenter'
 " Automatic helpers
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
-Bundle 'xolox/vim-session'
+"Bundle 'xolox/vim-session'
 Bundle 'Shougo/neocomplcache'
 " SnipMate
 Bundle "garbas/vim-snipmate"
@@ -45,13 +47,14 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "snipmate-snippets"
 " Language Additions
-Bundle 'mattn/zencoding-vim'
+"Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-rvm'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tangledhelix/vim-octopress'
-Bundle 'tpope/vim-rails'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+"Bundle 'tpope/vim-rails'
+"Bundle 'kchmck/vim-coffee-script'
+" note latex-suite will rebind ctrl-j
+"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 " Libraries
 Bundle 'tpope/vim-repeat'
 Bundle 'L9'
@@ -406,11 +409,10 @@ let g:statusline_order=[
 " FuzzyFinder
 " -----------------
 let g:fuf_modesDisable=['mrucmd'] " Enables FufMruFile
-"nnoremap <C-s> :FufBuffer<CR>
-nnoremap <silent>s<C-s> :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent><C-y> :FufMruFile<CR>
-nnoremap <Leader>ff :FufFile<CR>
-nnoremap <Leader>fm :FufMruFile<CR>
+nnoremap <C-s> :FufFileWithCurrentBufferDir<CR>
+"nnoremap <silent><C-y> :FufMruFile<CR>
+"nnoremap <Leader>ff :FufFile<CR>
+"nnoremap <Leader>fm :FufMruFile<CR>
 
 " ---------------
 " Session
