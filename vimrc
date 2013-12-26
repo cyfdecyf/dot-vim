@@ -111,7 +111,7 @@ set fileencodings=utf-8,gbk "ucs-bom,ucs-4
 " ---------------
 " Backups
 " ---------------
-set backup
+set backupcopy=yes
 set backupdir=~/.vim/data/backup
 set directory=~/.vim/data/swap
 
