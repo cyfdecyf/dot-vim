@@ -18,6 +18,7 @@ Bundle 'gmarik/vundle'
 " Plugin Bundles
 " ---------------
 
+"Bundle 'artemave/slowdown.vim'
 " Navigation
 Bundle 'FuzzyFinder'
 Bundle 'a.vim'
@@ -27,6 +28,7 @@ Bundle 'cscope_macros.vim'
 Bundle 'Lokaltog/vim-easymotion'
 " UI Additions
 Bundle 'dickeytk/status.vim'
+Bundle 'airblade/vim-gitgutter'
 " Commands
 Bundle 'tpope/vim-surround'
 "Bundle 'mileszs/ack.vim'
