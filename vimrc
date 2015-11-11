@@ -123,7 +123,7 @@ set t_vb=
 " ---------------
 if has('mouse')
   set mousehide  " Hide mouse after chars typed
-  set mouse=a  " Mouse in all modes
+  set mouse=a  " Mouse in all modes, this will disallow copy to clipboard
 end
 
 " Better complete options to speed it up
@@ -195,15 +195,19 @@ autocmd BufReadPost *
   \   exe "normal! g`\"" |
   \ endif
 
+" set file type for specific extensions
+autocmd BufRead,BufNewFile *.plt set filetype=gnuplot
+autocmd BufRead,BufNewFile *.thrift set filetype=thrift
+
 " cpp, java specific abbreviation
 "autocmd filetype c,cpp,java set shiftwidth=8 | set ts=8 | set noexpandtab
-autocmd filetype c,cpp,java set shiftwidth=4 | set ts=4 | set expandtab
+autocmd filetype c,cpp,java set shiftwidth=4 | set ts=4 | setlocal expandtab
 autocmd filetype c,cpp abbreviate #i #include
 autocmd filetype c,cpp abbreviate #d #define
 autocmd filetype c,cpp abbreviate #e #endif
 "autocmd filetype c,cpp set list | set listchars=tab:»·,trail:·
 autocmd filetype c,cpp,java,go inoremap { {}<Up>o
-autocmd filetype ruby setlocal shiftwidth=2
+autocmd filetype ruby setlocal shiftwidth=2 | setlocal expandtab
 autocmd filetype help setlocal nonu
 autocmd filetype html setlocal shiftwidth=2
 autocmd filetype python setlocal expandtab | setlocal shiftwidth=4 | setlocal tabstop=4 | setlocal softtabstop=4
@@ -394,7 +398,7 @@ let g:syntastic_mode_map={ 'mode': 'passive',
                          \ 'passive_filetypes': ['c'] }
 
 " ---------------
-" Syntastic
+" EasyMotion
 " ---------------
 
 let g:EasyMotion_mapping_f='f'
