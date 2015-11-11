@@ -264,6 +264,11 @@ endif
 nnoremap <silent> <Leader>f :CtrlPCurWD<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
+" More info https://robots.thoughtbot.com/faster-grepping-in-vim
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
 " ---------------
 " SuperTab
 " ---------------
