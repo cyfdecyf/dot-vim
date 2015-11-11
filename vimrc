@@ -258,6 +258,16 @@ endif
 " ----------------------------------------
 
 " ---------------
+" alternate
+" ---------------
+let g:alternateExtensions_h="c,cpp,cxx,cc,CC"
+let g:alternateExtensions_cpp="h,hpp"
+
+" Search alternate files inside other directories.
+" Put this config in .vimrc inside a project.
+"let g:alternateSearchPath = 'reg:/src/include///,reg:/include/src///'
+
+" ---------------
 " ctrl.p
 " ---------------
 
