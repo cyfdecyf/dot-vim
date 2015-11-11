@@ -1,68 +1,10 @@
-" ----------------------------------------
-" Vundle
-" ----------------------------------------
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-filetype off     " required!
 
-let g:vundle_default_git_proto='git'
-set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/go/
-call vundle#rc()
+" Use pathogen
+execute pathogen#infect()
 
-" let Vundle manage Vundle. required! 
-Bundle 'gmarik/vundle'
-
-" ---------------
-" Plugin Bundles
-" ---------------
-
-"Bundle 'artemave/slowdown.vim'
-" Navigation
-Bundle 'FuzzyFinder'
-Bundle 'a.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'taglist.vim'
-Bundle 'cscope_macros.vim'
-Bundle 'Lokaltog/vim-easymotion'
-" UI Additions
-Bundle 'dickeytk/status.vim'
-Bundle 'airblade/vim-gitgutter'
-" Commands
-Bundle 'tpope/vim-surround'
-"Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim.git'
-"Bundle 'vim-scripts/grep.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdcommenter'
-" Automatic helpers
-Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-"Bundle 'xolox/vim-session'
-Bundle 'Shougo/neocomplcache'
-" SnipMate
-Bundle "garbas/vim-snipmate"
-" SnipMate Depedancies
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "snipmate-snippets"
-" Language Additions
-"Bundle 'mattn/zencoding-vim'
-Bundle 'tpope/vim-rvm'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tangledhelix/vim-octopress'
-"Bundle 'tpope/vim-rails'
-"Bundle 'kchmck/vim-coffee-script'
-" note latex-suite will rebind ctrl-j
-"Bundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-" Libraries
-Bundle 'tpope/vim-repeat'
-Bundle 'L9'
-Bundle 'genutils'
-
-" Automatically detect file types. (must turn on after Vundle)
 filetype plugin indent on
 
 " ----------------------------------------
@@ -422,14 +364,6 @@ nnoremap <C-s> :FufFileWithCurrentBufferDir<CR>
 let g:session_autosave=1
 let g:session_autoload=0
 nnoremap <Leader>os :OpenSession<CR>
-
-" ---------------
-" Vundle
-" ---------------
-nmap <Leader>bi :BundleInstall<CR>
-nmap <Leader>bi! :BundleInstall!<CR>
-nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
-nmap <Leader>bc :BundleClean<CR>
 
 " ---------------
 " Kwbd
