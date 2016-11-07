@@ -48,7 +48,8 @@ colorscheme inkpot
 " ---------------
 " File encodings
 " ---------------
-set fileencodings=utf-8,gbk "ucs-bom,ucs-4
+"set fileencodings=utf-8,gbk "ucs-bom,ucs-4
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 
 " ---------------
 " Backups
@@ -181,6 +182,10 @@ cmap w!! w !sudo tee % >/dev/null
 "inoremap " "":let leavechar="\""i
 "inoremap <C-k> :exec "normal f" . leavechara
 
+" Simplify using Ag
+" search word under cursor.
+nnoremap gr :Ag <cword> %:p:h/*<CR>
+
 " ----------------------------------------
 " Auto Commands
 " ----------------------------------------
@@ -201,7 +206,7 @@ autocmd BufRead,BufNewFile *.thrift set filetype=thrift
 
 " cpp, java specific abbreviation
 "autocmd filetype c,cpp,java set shiftwidth=8 | set ts=8 | set noexpandtab
-autocmd filetype c,cpp,java set shiftwidth=4 | set ts=4 | setlocal expandtab
+autocmd filetype c,cpp,java setlocal shiftwidth=2 | set ts=4 | setlocal expandtab
 autocmd filetype c,cpp abbreviate #i #include
 autocmd filetype c,cpp abbreviate #d #define
 autocmd filetype c,cpp abbreviate #e #endif
@@ -227,7 +232,7 @@ autocmd filetype go setlocal makeprg=gomake
 " ---------------
 " cscope
 " ---------------
-set csprg=/usr/local/bin/cscope
+set csprg=/usr/bin/cscope
 set cscopequickfix=s-,d-,i-,t-,e-
 
 " ---------------
@@ -277,6 +282,8 @@ let g:alternateExtensions_cpp="h,hpp"
 
 nnoremap <silent> <Leader>f :CtrlPCurWD<CR>
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+
+let g:ctrlp_mruf_exclude = '*.o'
 
 " More info https://robots.thoughtbot.com/faster-grepping-in-vim
 if executable('ag')
