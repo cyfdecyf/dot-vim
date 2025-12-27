@@ -22,7 +22,7 @@ Bundle 'FuzzyFinder'
 Bundle 'a.vim'
 Bundle 'wincent/Command-T'
 Bundle 'taglist.vim'
-Bundle 'cscope_plus.vim'
+Bundle 'cscope_macros.vim'
 Bundle 'Lokaltog/vim-easymotion'
 " UI Additions
 Bundle 'dickeytk/status.vim'
