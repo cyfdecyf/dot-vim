@@ -208,12 +208,14 @@ map <F5> :make
 map <F7> :cnext
 map  :w
 
-nmap ' ` " Jump to the exact location of the mark
+" Jump to the exact location of the mark
+nmap ' `
 nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
-nmap <silent> <leader>s :setlocal spell!<CR> " Switch on spell
+" Switch on spell
+nmap <silent> <leader>s :setlocal spell!<CR>
 nmap <silent> <leader>v :e ~/.vimrc<CR>
 set pastetoggle=<leader>p
 
