@@ -230,8 +230,6 @@ vmap Q gq
 " In case forget to use sudo vim
 cmap w!! w !sudo tee % >/dev/null
 
-nnoremap <leader>bd <Plug>Kwbd
-
 " ctrl + k to move over the last pair
 "inoremap ( ():let leavechar=")"i
 "inoremap [ []:let leavechar="]"i
@@ -254,7 +252,7 @@ autocmd BufReadPost *
 
 " cpp, java specific abbreviation
 "autocmd filetype c,cpp,java set shiftwidth=8 | set ts=8 | set noexpandtab
-"autocmd filetype c,cpp,java set shiftwidth=4 | set ts=4 | set expandtab
+autocmd filetype c,cpp,java set shiftwidth=4 | set ts=4 | set expandtab
 autocmd filetype c,cpp abbreviate #i #include
 autocmd filetype c,cpp abbreviate #d #define
 autocmd filetype c,cpp abbreviate #e #endif
@@ -420,6 +418,19 @@ nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bi! :BundleInstall!<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
 nmap <Leader>bc :BundleClean<CR>
+
+" ---------------
+" Kwbd
+" ---------------
+nnoremap <leader>bd :Kwbd<CR>
+
+" ---------------
+" Syntastic
+" ---------------
+
+let g:syntastic_mode_map={ 'mode': 'passive',
+                         \ 'active_filetypes': ['ruby', 'python'],
+                         \ 'passive_filetypes': ['c'] }
 
 set exrc
 set secure
