@@ -135,7 +135,7 @@ set showcmd " display incomplete commands
 set autowrite " Writes on make/shell commands
 set wildignore+=*.o,*.obj,.git
 set scrolloff=5 " Always keep 5 lines above/below the cursor
-"set timeoutlen=250 " Time to wait for a command (after leader for example)
+set timeoutlen=200 " Time to wait for a command (after Leader for example)
 
 " ---------------
 " Text Format
@@ -215,9 +215,9 @@ nnoremap j gj
 nnoremap k gk
 
 " Switch on spell
-nmap <silent> <leader>s :setlocal spell!<CR>
-nmap <silent> <leader>v :e ~/.vimrc<CR>
-set pastetoggle=<leader>p
+nmap <silent> <Leader>s :setlocal spell!<CR>
+nmap <silent> <Leader>v :e ~/.vimrc<CR>
+set pastetoggle=<Leader>p
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -401,15 +401,15 @@ let g:fuf_modesDisable=['mrucmd'] " Enables FufMruFile
 nnoremap <C-s> :FufBuffer<CR>
 nnoremap <silent>s<C-s> :FufFileWithCurrentBufferDir<CR>
 nnoremap <silent><C-y> :FufMruFile<CR>
-nnoremap <leader>ff :FufFile<CR>
-nnoremap <leader>fm :FufMruFile<CR>
+nnoremap <Leader>ff :FufFile<CR>
+nnoremap <Leader>fm :FufMruFile<CR>
 
 " ---------------
 " Session
 " ---------------
 let g:session_autosave=1
 let g:session_autoload=0
-nnoremap <leader>os :OpenSession<CR>
+nnoremap <Leader>os :OpenSession<CR>
 
 " ---------------
 " Vundle
@@ -422,7 +422,7 @@ nmap <Leader>bc :BundleClean<CR>
 " ---------------
 " Kwbd
 " ---------------
-nnoremap <leader>bd :Kwbd<CR>
+nnoremap <Leader>bd :Kwbd<CR>
 
 " ---------------
 " Syntastic
@@ -431,6 +431,14 @@ nnoremap <leader>bd :Kwbd<CR>
 let g:syntastic_mode_map={ 'mode': 'passive',
                          \ 'active_filetypes': ['ruby', 'python'],
                          \ 'passive_filetypes': ['c'] }
+
+" ---------------
+" Syntastic
+" ---------------
+
+let g:EasyMotion_mapping_f='f'
+let g:EasyMotion_mapping_F='F'
+let g:EasyMotion_leader_key='<Leader>'
 
 set exrc
 set secure
